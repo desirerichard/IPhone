@@ -55,7 +55,7 @@ if (window.innerWidth < 1050) {
     gltfLoader.load("./assets/iphone/scene.gltf", (gltf) => {
       iphone = gltf.scene;
 
-      iphone.position.x = 0.7;
+      iphone.position.x = 0.5;
       iphone.rotation.y = -1;
       iphone.rotation.z = 0;
 
@@ -68,12 +68,12 @@ if (window.innerWidth < 1050) {
     const transformIphone = [
       {
         rotationZ: 0,
-        positionX: 0.7,
+        positionX: 0.5,
         rotationY: -1,
       },
       {
         rotationZ: -0.45,
-        positionX: -0.7,
+        positionX: -0.5,
         rotationY: 2,
       },
       {
@@ -168,8 +168,9 @@ if (window.innerWidth < 1050) {
     tick();
   }
   Tablet();
-} 
-if (window.innerWidth < 600){
+}
+
+if (window.innerWidth < 600) {
   function Mobile() {
     //Base
     const canvas = document.querySelector("canvas.webgl");
@@ -332,7 +333,7 @@ if (window.innerWidth < 600){
   }
   Mobile();
 }
-else {
+if (window.innerWidth > 1050) {
   function Desktop() {
     //Base
     const canvas = document.querySelector("canvas.webgl");
