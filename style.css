@@ -1,0 +1,145 @@
+/*///---Global---///*/
+
+@font-face {
+  font-family: "inclusive_sans";
+  src: url("./assets/inclusive_sans/fonts/InclusiveSans-Regular.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  /*Colors*/
+  --color-first: #f5f5f7;
+  --color-second: #000000;
+  --color-third: #0066cc;
+  --color-third-light: #0071e3;
+  /*Transition*/
+  --transition: all 0.5s ease;
+  --transition-mid: all 0.2s ease;
+  --transition-max: all 1s ease;
+  /*FontP*/
+  --font: "inclusive_sans";
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  color: var(--color-second);
+  margin: 0;
+  font-family: var(--font);
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-first);
+  height: 100vh;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/*---ScrollBar---*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-first);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-second);
+  border-radius: 20px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-second);
+}
+
+/*///---Global body---///*/
+.container {
+  max-width: 1500px;
+  width: 90%;
+  margin: auto;
+}
+main {
+  min-height: 100vh;
+  height: 100%;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+/*---Sections---*/
+.box {
+  max-width: 600px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+h2 {
+  display: flex;
+  flex-direction: column;
+  font-size: 60px;
+}
+h2 > span {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+/*Two*/
+.two {
+  align-items: flex-end;
+}
+
+/*Three*/
+.three {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.three__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5vh;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+.buy {
+  background-color: var(--color-third);
+  padding: 6px 16px 6px 16px;
+  border-radius: 20px;
+  color: var(--color-first);
+  cursor: pointer;
+  transition: var(--transition-mid);
+}
+.buy:hover {
+  background-color: var(--color-third-light);
+}
