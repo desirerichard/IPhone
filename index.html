@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+
+  Designed and coded by Désiré Richard
+  ________________________
+
+  desirerichard.com
+
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/IPhone/assets/favicon-420f3365.ico" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <meta name="description" content="IPhone 14 - Three.js" />
+    <link rel="apple-touch-icon" href="./public/logo192.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/IPhone/assets/apple-touch-icon-f5127cbd.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAtJREFUWEetl29M1VUYxz/8S700hnNOFBm1CDOqpVedYrOVkajjz7vIxi1QcQKW+EYgmMtaXaRBJGjpli5xygsuvQjXwuX0hQ27WpvcYMsbvSDIUYzt3pK/0p7f7p33Xs/v/n4/6nn1u/d8v8/zPc855znPicG6LQbWAI8DyQH6ODAI/ASMWXEZYxK8BCgBXgPWArE6vPvALaADOAP8ZeTfSEAiUAu8A8i3FfsbaAE+BORbadEEbALOB1JtJXAkVpbmDeB7lRM9AUL4AnjEbOTk5MWkpq7A4/GoKFNAaWBCYeMqARL8yyjrHOYgNjaWmppaqqoO0d7ezsGDb+tplv3hiBQRKSAbuGJl5hK8rq5eC7p7dykXL16IljTJxEvA9SAoVMCjwG3gMbNpT0pKwusdxGaz4fV6Wb/ezuTkpBH9N+BZwC/AUAFO4LARO3Q8NzeXzs4uhoeHyc/Po7//Z7P0BqA6VMBSQJTZVB7i4xNwOBzk5OSwaJGNO3d+4dq1q/h8fux2O36/n+zsbDIzV2nfly/30NbWis/n0xP0TyDTo8EMiJqPVOjExES6ur5i8+YXzM5Ow4nInTt3MDQ0pMerAZxBAT8Cz6uQra1tlJTICbJmMvuCgjx6e3v1iFK214gASf/diP2gkdLS0vB4+omLi7MUfW5ujsLCAm0potgcsEwEbAO+UQH37NlLS8unloILuKenh8LCfDO8XBGwHzihQjc2fkx5eYUZR2GY+vp3aWpqMsPbLwJkM8iF8ZCdPPkZDsebZhyFYaqrD3P8uKnM1UYVcOxYIxUVlZYFdHR0UFr6lhmeJkB3CcrK9tHc/IkZR2GYiYkJ1q2zMzj4qxG3XARsBy6pkKtXP43bfdPIiXK8r++2dhJGRkai8XeIgBRgWHUMhXnjhpusrKx5iRgfHycj4wnu3ZPC95DJMVwRLERyCT2jQkkRkmI0H3O5XBQXy+2uNIn5XFBAHfC+CpaQkKAtQ0bGk5Y0TE9Ps3HjBgYGBvR4cod/EBQgyyCt00IVesuWF+nuvoQ0H2atocHJ0aPv6cEnAq3eH6HXsVSOKj1GZeUBnM4GYmIeUMbGxpiamiQlZXkYrbv7a3btep2ZmRk9d83AIRkMFSA9fh+QqsfauvUVioqKGB39E5erE7f7Bw2anp5OXl6+tlndbjdnz55hdnZWz83vgf0mb4kwAfJb2qVvgXizqbaIk5S8Gmj7NKqqKd0LfK53LC0GDIXLsdsHnA79U68tLwPk7P1fmZCZy612KnIC0R4mLwPnpFj8h1kLVYpcMfCdyo/R00w2ppwlSd0Ci0KkPZalPAJoG24+AoIcyYLsjSLgKQMhUnnkcSrpltlHNaMMqMgrAy9k1fNcXsa6XajK2b/qdhKwYneCcQAAAABJRU5ErkJggg=="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAdJJREFUOE91k1FLU2EYx39rtIuNwfYByhPDIAxvbbAEo3BSbeD2CeymZkFE0xv9BOooN1zfIRamedZOejPmvYSE1YUHg9zNttvh2BbP0Rdej6fn8vm//9953//zHB9X6zrwGHgI3LqQj4FdYAfo6Rafy58ENjSjGy+gHPBVCTrgFfAOuKa7RkYM0uk06+vvVXsAvAaK0lCAGeCL2+z3+zk4+I5pmiwu5nWuQJ4AVQHIm38BhkP0+ZiaekA4HOb09C/5/AKWZdFsNjHNHfr9vgLZwG0BzAIV1S0WS8zNPfPIFgqFNZaXl3QtIwAJ7YV0DcPg8PCHcwt3tdttxsfv0ul0dKksJyXRaekmkzNUKp88v763t0sq9dSt1S4BEokEtdo3T4BkMDZ2h263q+sOoAw8l24wGMS2TwiFQp4Qy6qRycwyGMgQnPoggCzwUXVWVlbJ5eY9AdWqSTab0bWsAALAb+CmKJFIhHq9QSwWo9frMRwOCQQCtFotJifvY9uyjE6dAKMqbknns1qsaDTKxMQ99vcbDiQej3N09NPZi4saAmlgW5/XG2BV207PZwBifgsU5IB74CmgBNz4j/sP8BLYUvrVjTnPRK73yON33gTOdPg/jz6HXqqhwgwAAAAASUVORK5CYII="
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>IPhone 14</title>
+    <script type="module" crossorigin src="/IPhone/assets/index-a83d9b79.js"></script>
+    <link rel="stylesheet" href="/IPhone/assets/index-e6406eee.css">
+  </head>
+  <body>
+    <!--Main-->
+    <main>
+      <!--Canvas-->
+      <canvas class="webgl"></canvas>
+
+      <!--Header-->
+      <header>
+        <div class="container">
+          <img src="/IPhone/assets/logo-55d65d5b.svg" alt="logo apple" />
+        </div>
+      </header>
+
+      <!--First Section-->
+      <section class="one container">
+        <div id="box1" class="box">
+          <div class="hero">
+            <h2>IPhone 14 <span>Wonderfull.</span></h2>
+            <p>
+              The looongest battery life of any iPhone. Ever.<br />iOS 16 lets
+              you customize your Lock Screen in all kinds of fun ways.<br />Layer
+              a photo to make it pop. Track your Activity rings. And see live
+              updates from your favorite apps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Second Section-->
+      <section class="two container">
+        <div id="box2" class="box">
+          <div class="hero">
+            <h2>
+              Ceramic Shield
+              <span>Tougher than any smartphone glass.</span>
+            </h2>
+            <p>
+              Nano-ceramic crystals — which are harder than most metals — are
+              fused into glass for far greater durability.<br />Our dual
+              ion-exchange process also protects against nicks, scratches, and
+              everyday wear and tear.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Third Section-->
+      <section class="three container">
+        <div id="box3" class="three__box">
+          <h1>IPhone 14</h1>
+          <button class="buy">Buy</button>
+        </div>
+      </section>
+    </main>
+
+    
+  </body>
+</html>
